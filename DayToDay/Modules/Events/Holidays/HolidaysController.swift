@@ -48,5 +48,9 @@ final class HolidaysController: UIViewController {
         let displayTitle = "\(title)"
         return HolidayCellItem(displayTitle: displayTitle)
     }
+    
+    func holidayTapped() {
+        navigationController?.show(DiscriptionController(), sender: nil)
+    }
         
 }

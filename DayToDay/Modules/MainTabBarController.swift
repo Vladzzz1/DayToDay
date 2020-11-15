@@ -17,10 +17,10 @@ final class MainTabBarController: UITabBarController {
     
     private func getViewControllers() -> [UIViewController] {
         let holidaysVC = HolidaysController()
-        let gangsterVC = HolidaysController()
+        let eventsVC = EventsController()
         holidaysVC.title = "Праздники"
-        gangsterVC.title = "События"
+        eventsVC.title = "События"
         
-        return [holidaysVC, gangsterVC].map({UINavigationController(rootViewController: $0)})
+        return [holidaysVC, eventsVC].map({UINavigationController(rootViewController: $0)})
     }
 }

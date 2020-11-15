@@ -16,6 +16,10 @@
 		105CE7CF255DEA11005D54FA /* HolidaysCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105CE7CE255DEA11005D54FA /* HolidaysCell.swift */; };
 		10B12BC4255F242C00C6EAD0 /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B12BC3255F242C00C6EAD0 /* Holiday.swift */; };
 		10B12BC8255F284000C6EAD0 /* HolidayCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B12BC7255F284000C6EAD0 /* HolidayCellItem.swift */; };
+		10B12BD125617F1C00C6EAD0 /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B12BD025617F1C00C6EAD0 /* EventsController.swift */; };
+		10B12BD6256181AF00C6EAD0 /* EventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B12BD5256181AF00C6EAD0 /* EventsView.swift */; };
+		10B12BDC2561839200C6EAD0 /* DiscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B12BDB2561839200C6EAD0 /* DiscriptionView.swift */; };
+		10B12BDF256183A400C6EAD0 /* DiscriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B12BDE256183A400C6EAD0 /* DiscriptionController.swift */; };
 		AC87D5D92561609400C13B78 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87D5D82561609400C13B78 /* DateExtensions.swift */; };
 		AC87D5DE256166E100C13B78 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC87D5DD256166E100C13B78 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +36,10 @@
 		105CE7CE255DEA11005D54FA /* HolidaysCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidaysCell.swift; sourceTree = "<group>"; };
 		10B12BC3255F242C00C6EAD0 /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
 		10B12BC7255F284000C6EAD0 /* HolidayCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayCellItem.swift; sourceTree = "<group>"; };
+		10B12BD025617F1C00C6EAD0 /* EventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
+		10B12BD5256181AF00C6EAD0 /* EventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsView.swift; sourceTree = "<group>"; };
+		10B12BDB2561839200C6EAD0 /* DiscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscriptionView.swift; sourceTree = "<group>"; };
+		10B12BDE256183A400C6EAD0 /* DiscriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscriptionController.swift; sourceTree = "<group>"; };
 		AC87D5D82561609400C13B78 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		AC87D5DD256166E100C13B78 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +97,7 @@
 		105CE7C5255DD99A005D54FA /* Holidays */ = {
 			isa = PBXGroup;
 			children = (
+				10B12BDA2561833200C6EAD0 /* HolidayDiscription */,
 				105CE7C7255DDB8E005D54FA /* HolidaysView.swift */,
 				105CE7CB255DDBA5005D54FA /* HolidaysController.swift */,
 				105CE7CE255DEA11005D54FA /* HolidaysCell.swift */,
@@ -105,6 +114,25 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
+		10B12BCB25617E6500C6EAD0 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				10B12BD5256181AF00C6EAD0 /* EventsView.swift */,
+				10B12BD025617F1C00C6EAD0 /* EventsController.swift */,
+				105CE7C5255DD99A005D54FA /* Holidays */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		10B12BDA2561833200C6EAD0 /* HolidayDiscription */ = {
+			isa = PBXGroup;
+			children = (
+				10B12BDB2561839200C6EAD0 /* DiscriptionView.swift */,
+				10B12BDE256183A400C6EAD0 /* DiscriptionController.swift */,
+			);
+			path = HolidayDiscription;
+			sourceTree = "<group>";
+		};
 		AC87D5D72561608700C13B78 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +144,7 @@
 		AC87D5DC256166C500C13B78 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				105CE7C5255DD99A005D54FA /* Holidays */,
+				10B12BCB25617E6500C6EAD0 /* Events */,
 				AC87D5DD256166E100C13B78 /* MainTabBarController.swift */,
 			);
 			path = Modules;
@@ -195,10 +223,14 @@
 				105CE7CF255DEA11005D54FA /* HolidaysCell.swift in Sources */,
 				AC87D5DE256166E100C13B78 /* MainTabBarController.swift in Sources */,
 				10B12BC8255F284000C6EAD0 /* HolidayCellItem.swift in Sources */,
+				10B12BDF256183A400C6EAD0 /* DiscriptionController.swift in Sources */,
 				105CE7CC255DDBA5005D54FA /* HolidaysController.swift in Sources */,
+				10B12BD125617F1C00C6EAD0 /* EventsController.swift in Sources */,
 				105CE7C8255DDB8E005D54FA /* HolidaysView.swift in Sources */,
+				10B12BDC2561839200C6EAD0 /* DiscriptionView.swift in Sources */,
 				AC87D5D92561609400C13B78 /* DateExtensions.swift in Sources */,
 				105CE7AC255DD923005D54FA /* AppDelegate.swift in Sources */,
+				10B12BD6256181AF00C6EAD0 /* EventsView.swift in Sources */,
 				105CE7AE255DD923005D54FA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

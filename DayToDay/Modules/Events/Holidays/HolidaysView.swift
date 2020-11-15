@@ -83,5 +83,9 @@ final class HolidaysViev: UIView {
             return cell
         }
         
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            controller.holidayTapped()
+        }
+        
     }
     
