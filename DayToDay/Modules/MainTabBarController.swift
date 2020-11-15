@@ -19,7 +19,7 @@ final class MainTabBarController: UITabBarController {
         let holidaysVC = HolidaysController()
         let gangsterVC = HolidaysController()
         holidaysVC.title = "Праздники"
-        gangsterVC.title = "Гангстеры"
+        gangsterVC.title = "События"
         
         return [holidaysVC, gangsterVC].map({UINavigationController(rootViewController: $0)})
     }
