@@ -15,10 +15,12 @@ final class HolidaysViev: UIView {
        let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
+        tableView.register(HolidaysCell.self, forCellReuseIdentifier: HolidaysCell.identifier)
         return tableView
     }()
     
-    private var holidays: [[HolidayCellItem]] = []
+    private var holidays: [HolidayCellItem] = []
     
     init(controller: HolidaysController) {
         self.controller = controller
@@ -41,10 +43,7 @@ final class HolidaysViev: UIView {
     }
     
     func setItems(_ items: [HolidayCellItem]) {
-        for item in items {
-            let newSectionArray = [item]
-            holidays.append(newSectionArray)
-        }
+        self.holidays = items
         tableView.reloadData()
     }
     
@@ -52,7 +51,6 @@ final class HolidaysViev: UIView {
         addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(HolidaysCell.self, forCellReuseIdentifier: HolidaysCell.identifier)
     }
  
 }
@@ -75,11 +73,11 @@ final class HolidaysViev: UIView {
     extension HolidaysViev: UITableViewDelegate, UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return holidays[section].count
+            return holidays.count
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let currentItem = holidays[indexPath.section][indexPath.row]
+            let currentItem = holidays[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: HolidaysCell.identifier) as! HolidaysCell
             cell.setHolidayTitle(currentItem.displayTitle)
             return cell

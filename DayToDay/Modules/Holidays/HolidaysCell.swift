@@ -29,14 +29,15 @@ final class HolidaysCell: UITableViewCell {
     
     private let myImage: UIImageView = {
         let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
         image.image = #imageLiteral(resourceName: "orange")
-        image.contentMode = .scaleToFill
+        image.contentMode = .scaleAspectFit
         return image
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
+        configureCell()
     }
     
     required init?(coder: NSCoder) {
@@ -59,6 +60,8 @@ final class HolidaysCell: UITableViewCell {
         mainView.addSubview(titleLabel)
         mainView.addSubview(myImage)
         setNeedsUpdateConstraints()
+        
+        selectionStyle = .none
     }
 }
 
@@ -69,8 +72,9 @@ extension HolidaysCell {
         NSLayoutConstraint.activate([
             mainView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             mainView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            mainView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 40),
-            mainView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -40)
+            mainView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
+            mainView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
+            mainView.heightAnchor.constraint(equalToConstant: 70)
         ])
     }
     
@@ -78,17 +82,18 @@ extension HolidaysCell {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 16),
             titleLabel.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -16),
-            titleLabel.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -20)
+            titleLabel.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 20)
         ])
     }
     
     private func setMyImageConstraints() {
         NSLayoutConstraint.activate([
-            myImage.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 8),
-            myImage.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -8),
-            myImage.leadingAnchor.constraint(equalTo: mainView.leadingAnchor, constant: 12),
-            myImage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -12)
+            myImage.heightAnchor.constraint(equalToConstant: 40),
+            myImage.widthAnchor.constraint(equalToConstant: 40),
+            myImage.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 16),
+            myImage.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -16),
+            myImage.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            myImage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -16)
         ])
     }
     

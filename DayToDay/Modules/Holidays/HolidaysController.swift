@@ -13,12 +13,12 @@ final class HolidaysController: UIViewController {
     
     private let holidays: [Holiday] = [
         Holiday(title: "День уролога",
-                date: "13/10/2020",
+                date: Date(),
                 description: "В этот день отмечается праздник, когда все нарижаются в костюм пиписьки и ходят в кабинеты врачей",
                 image: #imageLiteral(resourceName: "apple")
         ),
         Holiday(title: "День вони",
-                date: "13/10/2020",
+                date: Date(),
                 description: "В этот день люди пукают на улице",
                 image: #imageLiteral(resourceName: "apple")
         )
@@ -32,7 +32,6 @@ final class HolidaysController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Праздники"
         navigationController?.navigationBar.prefersLargeTitles = true
         holidaysView.configureView()
         

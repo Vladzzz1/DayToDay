@@ -9,7 +9,7 @@ import UIKit
 
 struct Holiday {
     var title: String
-    var date: String
+    var date: Date
     var description: String
     var image: UIImage
 }
