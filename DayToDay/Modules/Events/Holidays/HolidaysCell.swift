@@ -13,9 +13,14 @@ final class HolidaysCell: UITableViewCell {
     
     private let mainView: UIView = {
         let view = UIView()
+        let cornerRadius: CGFloat = 16
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .secondarySystemBackground
-        view.layer.cornerRadius = 16
+        view.backgroundColor = .systemBackground
+        view.layer.cornerRadius = cornerRadius
+        view.layer.shadowColor = UIColor.systemGray3.cgColor
+        view.layer.shadowRadius = 5
+        view.layer.shadowOpacity = 0.7
+        view.layer.shadowOffset = CGSize(width: 3, height: 3)
         return view
     }()
     
@@ -74,7 +79,7 @@ extension HolidaysCell {
             mainView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             mainView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 24),
             mainView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -24),
-            mainView.heightAnchor.constraint(equalToConstant: 70)
+            mainView.heightAnchor.constraint(equalToConstant: 90)
         ])
     }
     

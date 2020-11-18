@@ -21,6 +21,26 @@ final class HolidaysController: UIViewController {
                 date: Date(),
                 description: "В этот день люди пукают на улице",
                 image: #imageLiteral(resourceName: "apple")
+        ),
+        Holiday(title: "День пердень",
+                date: Date(),
+                description: "В этот день отмечается праздник, когда все нарижаются в костюм пиписьки и ходят в кабинеты врачей",
+                image: #imageLiteral(resourceName: "apple")
+        ),
+        Holiday(title: "День магии",
+                date: Date(),
+                description: "В этот день люди пукают на улице",
+                image: #imageLiteral(resourceName: "apple")
+        ),
+        Holiday(title: "День магии вне Хогвартса",
+                date: Date(),
+                description: "В этот день отмечается праздник, когда все нарижаются в костюм пиписьки и ходят в кабинеты врачей",
+                image: #imageLiteral(resourceName: "apple")
+        ),
+        Holiday(title: "День творога, который не успел прокиснуть в холодильнке",
+                date: Date(),
+                description: "В этот день люди пукают на улице",
+                image: #imageLiteral(resourceName: "apple")
         )
     ]
     

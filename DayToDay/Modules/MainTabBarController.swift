@@ -20,7 +20,6 @@ final class MainTabBarController: UITabBarController {
         let eventsVC = EventsController()
         holidaysVC.title = "Праздники"
         eventsVC.title = "События"
-        
         return [holidaysVC, eventsVC].map({UINavigationController(rootViewController: $0)})
     }
 }
