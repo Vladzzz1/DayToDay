@@ -21,15 +21,15 @@ final class MainTabBarController: UITabBarController {
         let eventsVC = EventsController()
         holidaysVC.title = "Праздники"
         eventsVC.title = "События"
-        return [holidaysVC, eventsVC].map({UINavigationController(rootViewController: $0)})
+        return [holidaysVC, eventsVC].map({DTDNavigationController(rootViewController: $0)})
     }
     
     private func setTabBar() {
         let tapHoliday = tabBar.items![0]
         let tapEvents = tabBar.items![1]
         
-        //tapHoliday.image = UIImage(named: "holidays")
-        //tapEvents.image = UIImage(named: "events")
+        tapHoliday.image = UIImage(named: "holidays")
+        tapEvents.image = UIImage(named: "events")
         
     }
 }

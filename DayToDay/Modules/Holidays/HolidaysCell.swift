@@ -15,11 +15,11 @@ final class HolidaysCell: UITableViewCell {
         let view = UIView()
         let cornerRadius: CGFloat = 16
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = UITraitCollection.current.userInterfaceStyle == .dark ? .secondarySystemBackground : .systemBackground
         view.layer.cornerRadius = cornerRadius
-        view.layer.shadowColor = UIColor.systemGray3.cgColor
+        view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowRadius = 5
-        view.layer.shadowOpacity = 0.7
+        view.layer.shadowOpacity = 0.3
         view.layer.shadowOffset = CGSize(width: 3, height: 3)
         return view
     }()
@@ -28,7 +28,7 @@ final class HolidaysCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 0
         return label
     }()
     
@@ -97,9 +97,14 @@ extension HolidaysCell {
             myImage.widthAnchor.constraint(equalToConstant: 40),
             myImage.topAnchor.constraint(equalTo: mainView.topAnchor, constant: 16),
             myImage.bottomAnchor.constraint(equalTo: mainView.bottomAnchor, constant: -16),
-            myImage.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            myImage.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 8),
             myImage.trailingAnchor.constraint(equalTo: mainView.trailingAnchor, constant: -16)
         ])
+    }
+    
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        mainView.backgroundColor = UITraitCollection.current.userInterfaceStyle == .dark ? .secondarySystemBackground : .systemBackground
     }
     
 }

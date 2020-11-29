@@ -41,6 +41,36 @@ final class HolidaysController: UIViewController {
                 date: Date(),
                 description: "В этот день люди пукают на улице",
                 image: #imageLiteral(resourceName: "apple")
+        ),
+        Holiday(title: "День уролога",
+                date: Date(),
+                description: "В этот день отмечается праздник, когда все нарижаются в костюм пиписьки и ходят в кабинеты врачей",
+                image: #imageLiteral(resourceName: "apple")
+        ),
+        Holiday(title: "День вони",
+                date: Date(),
+                description: "В этот день люди пукают на улице",
+                image: #imageLiteral(resourceName: "apple")
+        ),
+        Holiday(title: "День пердень",
+                date: Date(),
+                description: "В этот день отмечается праздник, когда все нарижаются в костюм пиписьки и ходят в кабинеты врачей",
+                image: #imageLiteral(resourceName: "apple")
+        ),
+        Holiday(title: "День магии",
+                date: Date(),
+                description: "В этот день люди пукают на улице",
+                image: #imageLiteral(resourceName: "apple")
+        ),
+        Holiday(title: "День магии вне Хогвартса",
+                date: Date(),
+                description: "В этот день отмечается праздник, когда все нарижаются в костюм пиписьки и ходят в кабинеты врачей",
+                image: #imageLiteral(resourceName: "apple")
+        ),
+        Holiday(title: "День творога, который не успел прокиснуть в холодильнке",
+                date: Date(),
+                description: "В этот день люди пукают на улице",
+                image: #imageLiteral(resourceName: "apple")
         )
     ]
     
@@ -48,6 +78,16 @@ final class HolidaysController: UIViewController {
         super.loadView()
         holidaysView = HolidaysViev(controller: self)
         view = holidaysView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (navigationController as? DTDNavigationController)?.showProgressBar()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        (navigationController as? DTDNavigationController)?.hideProgressBar()
     }
     
     override func viewDidLoad() {
