@@ -21,7 +21,7 @@ final class EventsView: UIView {
     }
     
     func configureVeiw() {
-        backgroundColor = .darkGray
+        backgroundColor = .systemBackground
         setNeedsUpdateConstraints()
     }
     

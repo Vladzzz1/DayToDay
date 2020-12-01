@@ -19,10 +19,10 @@ final class HolidaysViev: UIView {
         tableView.register(HolidaysCell.self, forCellReuseIdentifier: HolidaysCell.identifier)
         return tableView
     }()
+    
     private lazy var navigationController = controller.navigationController as? DTDNavigationController
     private lazy var topInset = tableView.contentOffset.y
     private lazy var bottomInset = safeAreaInsets.bottom
-    
     
     private var holidays: [HolidayCellItem] = []
     

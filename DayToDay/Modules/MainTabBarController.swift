@@ -13,6 +13,7 @@ final class MainTabBarController: UITabBarController {
         super.viewDidLoad()
         viewControllers = getViewControllers()
         setTabBar()
+        setSelectedColor()
     }
     
     
@@ -30,6 +31,14 @@ final class MainTabBarController: UITabBarController {
         
         tapHoliday.image = UIImage(named: "holidays")
         tapEvents.image = UIImage(named: "events")
+    }
+    
+    private func setSelectedColor() {
+        let selectedColor: UIColor = .orange
+        let unselectedColor: UIColor = .gray
         
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: selectedColor], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: unselectedColor], for: .normal)
+        UITabBar.appearance().tintColor = .orange
     }
 }

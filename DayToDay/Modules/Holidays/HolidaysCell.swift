@@ -14,6 +14,17 @@ final class HolidaysCell: UITableViewCell {
     private let mainView: UIView = {
         let view = UIView()
         let cornerRadius: CGFloat = 16
+        /*
+        let color1 = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        let color2 = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+        
+        let gradientColor = CAGradientLayer()
+        gradientColor.colors = [color1, color2]
+        gradientColor.startPoint = CGPoint(x: -1.0, y: 1.0)
+        gradientColor.endPoint = CGPoint(x: 1.0, y: -1.0)
+        gradientColor.frame = view.bounds
+        view.layer.insertSublayer(gradientColor, at: 0)*/
+        
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UITraitCollection.current.userInterfaceStyle == .dark ? .secondarySystemBackground : .systemBackground
         view.layer.cornerRadius = cornerRadius

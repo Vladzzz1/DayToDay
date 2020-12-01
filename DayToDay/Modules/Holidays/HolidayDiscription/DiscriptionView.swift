@@ -21,7 +21,7 @@ final class DiscriptionView: UIView {
     }
     
     func configureView() {
-        backgroundColor = .white
+        backgroundColor = .systemBackground
         setNeedsUpdateConstraints()
     }
     
